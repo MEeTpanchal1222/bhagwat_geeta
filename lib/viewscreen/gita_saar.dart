@@ -38,7 +38,7 @@ class _GitaSaarState extends State<GitaSaar> {
       height: 400,
       color: colororg,
       child: Image.asset(
-        'asset/images/appBG.png',
+        'assest/appBG.png',
         width: width,
         fit: BoxFit.cover,
       ),
@@ -55,7 +55,7 @@ class _GitaSaarState extends State<GitaSaar> {
           SizedBox(
             height: height / 3.5,
             child: Image.asset(
-              'asset/images/text.png',
+              'assest/text.png',
               height: 130,
               width: 130,
             ),
