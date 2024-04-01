@@ -1,6 +1,7 @@
 import 'package:bhagwat_geeta/uitels/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../uitels/listonly.dart';
 class ShlokList extends StatefulWidget {
@@ -19,9 +20,11 @@ class _ShlokListState extends State<ShlokList> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
 
+
+
     return Scaffold(
       backgroundColor: colororg,
-      appBar: AppBar(title: Text('Gita'),backgroundColor: colororg,elevation: 5,),
+      appBar: AppBar(title: Text('Gita'),backgroundColor: Color(0xffffc342),elevation: 5,),
       body: Stack(
         children: [
           //background image of body
@@ -198,7 +201,7 @@ class _ShlokListState extends State<ShlokList> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          textBtn(btnName: 'COPY'),
+          textBtn(btnName: 'COPY',),
           const SizedBox(
             width: 50,
           ),
@@ -208,18 +211,12 @@ class _ShlokListState extends State<ShlokList> {
     );
   }
 
-  textBtn({required String btnName}) {
+  textBtn({required String btnName,String? meet}) {
     return CupertinoButton(
       onPressed: () {
+        Clipboard.setData(ClipboardData(text: meet!));
+
         if (btnName == 'COPY') {
-          // Fluttertoast.showToast(
-          //     msg: 'Copied!',
-          //     toastLength: Toast.LENGTH_SHORT,
-          //     gravity: ToastGravity.BOTTOM,
-          //     timeInSecForIosWeb: 1,
-          //     backgroundColor: Colors.white,
-          //     textColor: Colors.black,
-          //     fontSize: 16.0);
           const snackBar = SnackBar(
             duration: Duration(seconds: 1),
             content: Text(
